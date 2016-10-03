@@ -31,6 +31,16 @@ public class DoModifyServlet extends HttpServlet {
 		String subJect = Param.getStringParam(request, "subJect");
 		String content = Param.getStringParam(request, "content");
 		
+		if(articleId.length()==0){
+			response.sendRedirect("/CookingBoard/board/detail?errorCode=2&&articleId="+articleId);
+		}
+		if(subJect.length()==0){
+			response.sendRedirect("/CookingBoard/board/detail?errorCode=2&&articleId="+articleId);
+		}
+		if(content.length()==0){
+			response.sendRedirect("/CookingBoard/board/detail?errorCode=2&&articleId="+articleId);
+		}
+		
 		CookingArticlesVO articlesVO = new CookingArticlesVO();
 		articlesVO.setCookingArticleId(articleId);
 		articlesVO.setCookingArticleSubject(subJect);

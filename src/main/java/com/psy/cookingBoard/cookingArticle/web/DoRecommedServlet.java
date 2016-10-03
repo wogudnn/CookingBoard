@@ -28,6 +28,7 @@ public class DoRecommedServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		String articleId = Param.getStringParam(request, "articleId");
+		
 		if(articleId.length()==0) {
 			response.sendRedirect("/CookingBoard/board/list?errorCode=2&&articleId="+articleId);
 		}

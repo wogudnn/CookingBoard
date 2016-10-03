@@ -32,6 +32,10 @@ public class ViewDetailPageServlet extends HttpServlet {
 		
 		String articleId = Param.getStringParam(request, "articleId");
 		
+		if(articleId.length()==0){
+			response.sendRedirect("/CookingBoard/board/list?errorCode=1");
+		}
+		
 		CookingArticlesVO articlesVO = articlesBiz.getArticleBy(articleId);
 		
 		String viewPath = "/WEB-INF/view/cookingArticle/detail.jsp";

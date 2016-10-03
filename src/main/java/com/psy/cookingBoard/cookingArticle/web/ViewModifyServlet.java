@@ -31,6 +31,11 @@ public class ViewModifyServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		String articleId = Param.getStringParam(request, "articleId");
+		
+		if(articleId.length()==0){
+			response.sendRedirect("/CookingBoard/board/detail?errorCode=1&&articleId="+articleId);
+		}
+		
 		CookingArticlesVO articlesVO = articlesBiz.getArticleBy(articleId);
 		String viewPath = "/WEB-INF/view/cookingArticle/modify.jsp";
 		RequestDispatcher rd = request.getRequestDispatcher(viewPath);
