@@ -15,6 +15,14 @@
 				location.href="/CookingBoard/board/doDelete?articleId=${articlesVO.cookingArticleId}"
 			}
 		});
+		
+		$("#recommendBtn").click(function() {
+			if(confirm("\"${articlesVO.cookingArticleSubject}.\"를 추천하시겠습니까?")) {
+
+				location.href="/CookingBoard/board/doRecommed?articleId=${articlesVO.cookingArticleId}"
+			}
+		});
+		
 	});
 </script>
 </head>
@@ -24,7 +32,7 @@
 			<div id="articleHeader">
 				<p>${articlesVO.cookingArticleSubject}</p>
 				<div id="articleInfo">
-					<span>작성자 : ${articlesVO.userVO.nickName}</span>
+					<span>작성자 : ${articlesVO.userVO.nickName}(${articlesVO.userVO.point})</span>
 					<span>작성시간: ${articlesVO.createDate}</span>
 					<span>조회수 : ${articlesVO.hitCount}</span>
 					<span>추천수 : ${articlesVO.recommedCount}</span>
@@ -35,10 +43,12 @@
 				${articlesVO.cookingArticleContent}
 			</div>
 		</div>
-		<div id="articleFooter">
+		<div id="articleFooter" class="right">
+			<a href="javascript:void(0);" id="recommendBtn">추천</a>
 			<a href="javascript:void(0);" id="deleteBtn">삭제</a>
 			<a href="/CookingBoard/board/list">목록보기</a>
 		</div>
+		<div class="clear" ></div>
 	</div>
 </body>
 </html>

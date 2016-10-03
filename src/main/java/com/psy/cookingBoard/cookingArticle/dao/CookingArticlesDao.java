@@ -13,5 +13,9 @@ public interface CookingArticlesDao {
 	public CookingArticlesVO getArticleBy(String articleId);
 
 	public int deleteArticle(String articleId);
+	
+	public int updateHitCount(String articleId);
+
+	public int updateRecommend(String articleId);
 
 }

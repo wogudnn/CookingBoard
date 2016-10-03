@@ -127,4 +127,14 @@
     <servlet-name>DoDeleteServlet</servlet-name>
     <url-pattern>/board/doDelete</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoRecommedServlet</display-name>
+    <servlet-name>DoRecommedServlet</servlet-name>
+    <servlet-class>com.psy.cookingBoard.cookingArticle.web.DoRecommedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoRecommedServlet</servlet-name>
+    <url-pattern>/board/doRecommed</url-pattern>
+  </servlet-mapping>
 </web-app>

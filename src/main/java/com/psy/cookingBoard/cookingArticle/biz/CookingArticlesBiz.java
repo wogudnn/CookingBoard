@@ -14,4 +14,6 @@ public interface CookingArticlesBiz {
 
 	public boolean deleteArticle(String articleId);
 
+	public boolean updateRecommend(String articleId);
+
 }
