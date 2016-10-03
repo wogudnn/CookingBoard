@@ -29,6 +29,7 @@ public class CookingArticlesDaoImpl extends DaoSupport implements CookingArticle
 				query.append(" C.RCMD_CNT, C.USR_ID, C.FILE_NM, U.USR_NM, U.POINT  ");
 				query.append(" FROM 	COOK_ATCL C, USR U ");
 				query.append(" WHERE 	C.USR_ID = U.USR_ID ");
+				query.append(" ORDER	BY COOK_ATCL_ID DESC ");
 
 				PreparedStatement pstmt = conn.prepareStatement(query.toString());
 
@@ -194,6 +195,30 @@ public class CookingArticlesDaoImpl extends DaoSupport implements CookingArticle
 
 				return pstmt;
 
+			}
+		});
+	}
+	
+	@Override
+	public int modifyArticle(CookingArticlesVO articlesVO) {
+
+		return insert(new Query() {
+			
+			@Override
+			public PreparedStatement query(Connection conn) throws SQLException {
+				StringBuffer query = new StringBuffer();
+				query.append(" UPDATE COOK_ATCL ");
+				query.append(" SET	COOK_ATCL_SBJ = ?, ");
+				query.append(" 		COOK_ATCL_CNNT = ?, ");
+				query.append(" 		HIT_CNT = HIT_CNT - 2  ");
+				query.append(" WHERE COOK_ATCL_ID = ? ");
+
+				PreparedStatement pstmt = conn.prepareStatement(query.toString());
+				pstmt.setString(1, articlesVO.getCookingArticleSubject());
+				pstmt.setString(2, articlesVO.getCookingArticleContent());
+				pstmt.setString(3, articlesVO.getCookingArticleId());
+
+				return pstmt;
 			}
 		});
 	}

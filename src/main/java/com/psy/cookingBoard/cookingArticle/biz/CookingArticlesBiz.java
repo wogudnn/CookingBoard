@@ -16,4 +16,6 @@ public interface CookingArticlesBiz {
 
 	public boolean updateRecommend(String articleId);
 
+	public boolean modifyArticle(CookingArticlesVO articlesVO);
+
 }

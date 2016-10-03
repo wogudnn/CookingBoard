@@ -137,4 +137,24 @@
     <servlet-name>DoRecommedServlet</servlet-name>
     <url-pattern>/board/doRecommed</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewModifyServlet</display-name>
+    <servlet-name>ViewModifyServlet</servlet-name>
+    <servlet-class>com.psy.cookingBoard.cookingArticle.web.ViewModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewModifyServlet</servlet-name>
+    <url-pattern>/board/modify</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoModifyServlet</display-name>
+    <servlet-name>DoModifyServlet</servlet-name>
+    <servlet-class>com.psy.cookingBoard.cookingArticle.web.DoModifyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoModifyServlet</servlet-name>
+    <url-pattern>/board/doModify</url-pattern>
+  </servlet-mapping>
 </web-app>

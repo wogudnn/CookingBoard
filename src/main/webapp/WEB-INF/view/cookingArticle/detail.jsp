@@ -23,6 +23,13 @@
 			}
 		});
 		
+		$("#modifyBtn").click(function() {
+			if(confirm("\"${articlesVO.cookingArticleSubject}.\"를 수정하시겠습니까?")) {
+
+				location.href="/CookingBoard/board/modify?articleId=${articlesVO.cookingArticleId}"
+			}
+		});
+		
 	});
 </script>
 </head>
@@ -44,6 +51,7 @@
 			</div>
 		</div>
 		<div id="articleFooter" class="right">
+			<a href="javascript:void(0);" id="modifyBtn">수정</a>
 			<a href="javascript:void(0);" id="recommendBtn">추천</a>
 			<a href="javascript:void(0);" id="deleteBtn">삭제</a>
 			<a href="/CookingBoard/board/list">목록보기</a>

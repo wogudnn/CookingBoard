@@ -50,4 +50,10 @@ public class CookingArticlesBizImpl implements CookingArticlesBiz {
 		return articlesDao.updateRecommend(articleId) > 0;
 	}
 	
+	@Override
+	public boolean modifyArticle(CookingArticlesVO articlesVO) {
+
+		return articlesDao.modifyArticle(articlesVO) > 0 ;
+	}
+	
 }
